@@ -1,0 +1,41 @@
+https://www.npmjs.com/
+https://nodejs.org/en/
+
+JSON
+javascript object notation
+{
+    "name":"aa",
+    "class":"ui"
+},
+{
+    "name":"bb",
+    "class":"ang"
+}
+
+package.JSON
+Step1
+>> npm init
+Step 2
+>>npm install zone.js
+
+
+
+>>Local
+>>Globaln
+
+
+//// For creating Angular App
+Step1
+>> npm install -g @angular/cli
+mac/linux
+sudo npm install -g @angular/cli
+Step 2
+>> ng new firstapp
+Step3
+>> cd firstapp
+step4
+>> npm start
+step5
+>> http://localhost:4200
+
+
