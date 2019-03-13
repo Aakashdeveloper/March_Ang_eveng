@@ -39,3 +39,9 @@ step5
 >> http://localhost:4200
 
 
+
+Module    ==> Here all Declaration happen   {NgModule}
+Component ==> Html css and logic            {Component}
+Pipe      ==> Help to do run time data change
+Service   ==> Help to connect with database or any external Api
+Routing   ==> Jumping between pages or move from one page to next
