@@ -45,3 +45,30 @@ Component ==> Html css and logic            {Component}
 Pipe      ==> Help to do run time data change
 Service   ==> Help to connect with database or any external Api
 Routing   ==> Jumping between pages or move from one page to next
+
+
+
+//Binding//
+One Way Binding
+> Data Binding {{}}
+> Property Binding []
+> Event Binding ()
+Two Way Binding
+> two way binding [()]
+
+
+//
+String = "jnn" "fdbfd" '4' "44" 'rhrt' 'true'
+Number = 4587 8578 8578
+Boolean = true/false
+any[]
+
+gird basic
+tables
+alerts
+buttons
+glyphicons
+Panels
+Navbar
+inputs
+Modal
