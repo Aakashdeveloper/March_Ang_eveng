@@ -72,3 +72,51 @@ Panels
 Navbar
 inputs
 Modal
+
+
+/////
+*ngFor
+*ngIf
+
+
+///////
+function add(a,b){
+    return a+b
+}
+
+const add = (a,b) => {
+    return a+b
+}
+
+
+
+////
+var a  = 10
+undefined
+a
+10
+var a  = 20
+undefined
+a
+20
+let b =10
+undefined
+b
+10
+let b =20
+VM475:1 Uncaught SyntaxError: Identifier 'b' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM475:1
+b = 20
+20
+b
+20
+const c = 10
+undefined
+const c = 20
+VM522:1 Uncaught SyntaxError: Identifier 'c' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM522:1
+c = 20
+VM533:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:3
