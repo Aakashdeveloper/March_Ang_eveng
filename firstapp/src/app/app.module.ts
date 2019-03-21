@@ -2,9 +2,14 @@ import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+// Components
 import { AppComponent } from './app.component';
 import { BookComponent } from './book.component';
 import { ProductComponent } from './products/product.component';
+
+// Pipes
+import { MyUpperPipe } from './products/myupper.pipe';
+import { DiscountPipe } from './products/discount.pipe';
 
 // MetaData
 @NgModule({
@@ -18,7 +23,9 @@ import { ProductComponent } from './products/product.component';
     declarations: [
         AppComponent,
         BookComponent,
-        ProductComponent
+        ProductComponent,
+        MyUpperPipe,
+        DiscountPipe
     ],
 
     // All Service

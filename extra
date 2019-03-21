@@ -120,3 +120,18 @@ VM522:1 Uncaught SyntaxError: Identifier 'c' has already been declared
 c = 20
 VM533:1 Uncaught TypeError: Assignment to constant variable.
     at <anonymous>:1:3
+
+
+/////
+
+uppecase
+lower 
+date
+perctange
+currency
+title case
+
+
+https://www.w3schools.com/jsref/jsref_filter.asp
+https://www.w3schools.com/jsref/jsref_map.asp
+https://www.w3schools.com/jsref/jsref_indexof.asp

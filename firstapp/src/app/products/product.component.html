@@ -39,10 +39,10 @@
                         <td>
                                 <img [src]="prod.imageUrl"  *ngIf="showImage"/>
                         </td>
-                        <td>{{prod.productName}}</td>
-                        <td>{{prod.productCode}}</td>
+                        <td style="color:red">{{prod.productName | myupper:'upper'}}</td>
+                        <td>{{prod.productCode | myupper:'upper'}}</td>
                         <td>{{prod.releaseDate}}</td>
-                        <td>{{prod.price}}</td>
+                        <td>{{prod.price  | discountPipe:2 | currency:'GBP' }}</td>
                         <td>{{prod.starRating}}</td>
                     </tr>
                 </tbody>
