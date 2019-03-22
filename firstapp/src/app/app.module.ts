@@ -10,6 +10,7 @@ import { ProductComponent } from './products/product.component';
 // Pipes
 import { MyUpperPipe } from './products/myupper.pipe';
 import { DiscountPipe } from './products/discount.pipe';
+import { ProductSearch } from './products/productSearch.pipe';
 
 // MetaData
 @NgModule({
@@ -25,7 +26,8 @@ import { DiscountPipe } from './products/discount.pipe';
         BookComponent,
         ProductComponent,
         MyUpperPipe,
-        DiscountPipe
+        DiscountPipe,
+        ProductSearch
     ],
 
     // All Service
