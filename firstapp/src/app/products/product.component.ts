@@ -2,16 +2,31 @@ import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 
 @Component({
+    // Attribute
+    // selector: '[app-prod]',
+    // class
+    // selector: '.app-prod',
     selector: 'app-prod',
     templateUrl: './product.component.html',
     // styles: ['thead{color:red}', 'h4{color:purple}']
-    styleUrls : ['./product.component.css']
+    styleUrls : ['./product.component.css'],
+    styles: [
+        `.online{
+            background-color:wheat
+        }`
+    ]
 })
 
 export class ProductComponent {
     title: String = '***Product App***';
     showImage: Boolean = false;
     filterValue: String;
+    imageWidth: Number = 70;
+    serverstatus: String = 'offline';
+
+    constructor() {
+        this.serverstatus = Math.random() > 0.5 ? 'Online' : 'Offline';
+    }
     products: IProduct[] = [
         {
             '_id': '5a05dacc734d1d68d42d31f3',
@@ -47,6 +62,10 @@ export class ProductComponent {
             'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png'
           }
     ];
+
+    getColor() {
+        return this.serverstatus === 'Online' ? 'green' : 'red';
+    }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
