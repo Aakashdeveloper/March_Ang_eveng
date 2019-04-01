@@ -135,3 +135,28 @@ title case
 https://www.w3schools.com/jsref/jsref_filter.asp
 https://www.w3schools.com/jsref/jsref_map.asp
 https://www.w3schools.com/jsref/jsref_indexof.asp
+
+
+
+
+////////
+var age = 10
+var out = "my age is "+age
+var out1 = `my age is ${age}`
+
+
+function add(a,b){
+    return a+b
+}
+
+
+add(1,2)
+
+var sum = add(1,2)
+
+////
+when we recive the instance of data from external source
+rather than creating itself
+
+
+https://github.com/Aakashdeveloper/public-apis
