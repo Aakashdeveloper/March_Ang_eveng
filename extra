@@ -160,3 +160,10 @@ rather than creating itself
 
 
 https://github.com/Aakashdeveloper/public-apis
+
+
+//cli
+ng g c music/ ng generate component movies- component
+ng g p musicpipe/
+ng g s musicpipe/
+ng g m musicpipe/

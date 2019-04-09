@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 // Service
 import { ProductModule } from './products/product.module';
 import { AppRoutingModule } from './app-routing.module';
+import { MusicModule } from './music/musicmodule.module';
 
 // MetaData
 @NgModule({
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
         FormsModule,
         HttpClientModule,
         ProductModule,
-        AppRoutingModule
+        AppRoutingModule,
+        MusicModule
     ],
 
     // All Component & pipes
