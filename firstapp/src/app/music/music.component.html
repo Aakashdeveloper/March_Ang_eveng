@@ -1,3 +1,38 @@
-<p>
-  music works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      Music Component
+  </div>
+  <div class="panel-body">
+      <div *ngFor="let music of musicData">
+      <br/>
+      <button type="button" class="btn btn-info"
+        data-toggle="modal" [attr.data-target]="'#' + music.cover">{{music.name}}
+      </button>
+        
+        <div class="modal fade" id="{{music.cover}}" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                  {{music.name}}
+              </div>
+              <div class="modal-body">
+                <img src="../../assets/covers/{{music.cover}}.jpg"/>
+                  <ul *ngFor="let album of music.albums">
+                      <li>{{album.title}}</li>
+                  </ul>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-danger"
+                  type="button" data-dismiss="modal">
+                    Close
+                  </button>
+              </div>
+            </div>
+          </div>
+           
+        </div>
+        
+        
+      </div>
+  </div>
+</div>
