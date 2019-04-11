@@ -167,3 +167,6 @@ ng g c music/ ng generate component movies- component
 ng g p musicpipe/
 ng g s musicpipe/
 ng g m musicpipe/
+
+// Template Approch
+// Reactive Approch
