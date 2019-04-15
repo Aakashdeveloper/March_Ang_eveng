@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
 })
 
 export class EmployeeFormComponent {
-
+    languages: any[] = ['Node', 'Angular', 'React', 'Mongo'];
 }
