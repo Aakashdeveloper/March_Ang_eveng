@@ -170,3 +170,7 @@ ng g m musicpipe/
 
 // Template Approch
 // Reactive Approch
+
+
+ngPristine   ngtouched      ngvalid
+ngDirty      nguntouched    nginvalid

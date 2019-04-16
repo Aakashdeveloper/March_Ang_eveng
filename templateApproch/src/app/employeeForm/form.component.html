@@ -4,15 +4,28 @@
     </div>
     <div class="panel-body">
         <form (submit)="formSubmit()">
-            <div class="form-group">
-                <label for="firstname">First Name</label>
+            <div class="form-group" [class.has-error]="firstName.invalid">
+                <label for="firstname"
+                    class="control-label">
+                    First Name
+                </label>
                 <input type="text"
                         class="form-control"
                         type="text"
                         id="firstname"
                         name="firstname"
                         placeholder="Firstname"
+                        [ngModel]= "model.firstname"
+                        (ngModelChange)="firstToUpper($event)"
+                        #firstName="ngModel"
                         required/>
+                <div class="alert alert-danger" *ngIf="firstName.invalid">
+                    First Name is required
+                </div>
+            </div>
+            <div>
+                <h1>Classess</h1>
+                <h2>{{firstName.invalid}}</h2>
             </div>
             <div class="form-group">
                     <label for="lastname">Last Name</label>
@@ -21,6 +34,7 @@
                             type="text"
                             id="lastname"
                             name="lastname"
+                            [(ngModel)]="model.lastname"
                             placeholder="Lastname"
                             required/>
             </div>
@@ -31,6 +45,7 @@
                             type="email"
                             id="email"
                             name="email"
+                            [(ngModel)]="model.email"
                             placeholder="Email"
                             required/>
             </div>
@@ -41,6 +56,7 @@
                             type="password"
                             id="password"
                             name="password"
+                            [(ngModel)]="model.password"
                             placeholder="Password"
                             required/>
             </div>
@@ -48,6 +64,7 @@
                 <label>
                     <input type="checkbox"
                         name="fulltime"
+                        [(ngModel)]="model.fulltime"
                         value="fulltime"/>
                     Full Time
                 </label>
@@ -56,6 +73,7 @@
                 <label>
                     <input type="radio"
                         name="gender"
+                        [(ngModel)]="model.gender"
                         value="female"/>
                     Female
                 </label>
@@ -64,6 +82,7 @@
                 <label>
                     <input type="radio"
                         name="gender"
+                        [(ngModel)]="model.gender"
                         value="male"/>
                         Male
                 </label>
@@ -71,7 +90,8 @@
             <div class="form-group">
                 <label>Code Lang</label>
                 <select class="form-control"
-                    name="codelang">
+                    name="codelang"
+                    [(ngModel)]="model.codelang">
                     <option *ngFor="let lang of languages">
                         {{lang}}
                     </option>
