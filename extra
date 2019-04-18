@@ -174,3 +174,23 @@ ng g m musicpipe/
 
 ngPristine   ngtouched      ngvalid
 ngDirty      nguntouched    nginvalid
+
+
+//
+register user => http://localhost:5000/api/auth/register
+payload
+ {"name":"john", "email":"john@gmail.com","password":"12345678","role":"admin"}
+method:Post
+
+ getuserinfo: http://localhost:5000/api/auth/me
+ passheader
+ x-access-token = "generated token"
+ method:Get
+
+ loginUser: http://localhost:5000/api/auth/login
+ payload: {"email":"john@gmail.com","password":"jhjh"}
+ method: Post
+
+
+For all User: http://localhost:5000/api/auth/users
+method:GET

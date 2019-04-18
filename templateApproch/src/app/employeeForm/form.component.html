@@ -3,7 +3,7 @@
         Employee Form
     </div>
     <div class="panel-body">
-        <form (submit)="formSubmit()">
+        <form #form="ngForm" (submit)="formSubmit(form)">
             <div class="form-group" [class.has-error]="firstName.invalid">
                 <label for="firstname"
                     class="control-label">
@@ -38,19 +38,26 @@
                             placeholder="Lastname"
                             required/>
             </div>
-            <div class="form-group">
-                    <label for="email">Email</label>
+            <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                    <label class="control-label" for="email">Email</label>
                     <input type="text"
                             class="form-control"
                             type="email"
                             id="email"
                             name="email"
                             [(ngModel)]="model.email"
+                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                             placeholder="Email"
+                            #email="ngModel"
                             required/>
+                    <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+                       Enter Valid email
+                    </div>
             </div>
-            <div class="form-group">
-                    <label for="password">Password</label>
+            <div class="form-group" [class.has-error]="password.invalid && password.touched">
+                    <label class="control-label" for="password">
+                        Password
+                    </label>
                     <input type="text"
                             class="form-control"
                             type="password"
@@ -58,7 +65,12 @@
                             name="password"
                             [(ngModel)]="model.password"
                             placeholder="Password"
+                            minlength="8"
+                            #password="ngModel"
                             required/>
+                    <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+                        Min length is 8
+                    </div>
             </div>
             <div class="checkbox">
                 <label>
@@ -87,17 +99,25 @@
                         Male
                 </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" [class.has-error]="hasCodeLangError">
                 <label>Code Lang</label>
                 <select class="form-control"
                     name="codelang"
-                    [(ngModel)]="model.codelang">
+                    [(ngModel)]="model.codelang"
+                    (blur)="validateCodelang($event)">
+                    <option value="default">
+                        Please select valid option
+                    </option>
                     <option *ngFor="let lang of languages">
                         {{lang}}
                     </option>
                 </select>
+                <div class="alert alert-danger" *ngIf="hasCodeLangError">
+                        Please Selecte valid input
+                </div>
             </div>
             <button type="submit"
+                    [disabled]="hasCodeLangError"
                     class="btn btn-success">
                 Submit
             </button>&nbsp;
