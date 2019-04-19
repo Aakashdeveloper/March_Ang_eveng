@@ -1,0 +1,41 @@
+<br/>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Login Form
+    </div>
+    <div class="panel-body">
+        <form novalidate #form="ngForm" (submit)="loginForm(form)">
+            <div class="form-group" [class.has-error]="Email.invalid && Email.touched">
+                <label class="control-label" for="email">Email</label>
+                <input type="email"
+                        placeholder="email"
+                        class="form-control"
+                        name="email"
+                        pattern= "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                        id="email"
+                        #Email="ngModel"
+                        [(ngModel)]="customModel.email">
+                <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">
+                    Please enter valid email
+                </div>
+            </div>
+            <div class="form-group" [class.has-error]="password.invalid && password.touched">
+                    <label class="control-label" for="pwd">Password</label>
+                    <input type="password"
+                            placeholder="password"
+                            class="form-control"
+                            name="password"
+                            minlength="8"
+                            id="pwd"
+                            #password="ngModel"
+                            [(ngModel)]="customModel.password">
+                    <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+                        Min length of password is 8
+                    </div>
+            </div>
+            <button class="btn btn-success" 
+                    type="submit">Submit</button>&nbsp;
+            <button class="btn btn-danger" type="reset">Reset</button>
+        </form>
+    </div>
+</div>
