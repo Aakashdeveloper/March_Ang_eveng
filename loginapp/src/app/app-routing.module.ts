@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterGaurdService } from './auth.register.gaurd.service';
+import { RouterGaurdService } from './auth.gaurd.service';
 
 
 
 
 const routes: Routes = [
-    {path: 'register', component: RegisterFormComponent},
-    {path: 'profile', component: ProfileComponent},
+    {path: 'register', canActivate: [RegisterGaurdService], component: RegisterFormComponent},
+    {path: 'profile', canActivate: [RouterGaurdService], component: ProfileComponent},
     {path: 'login', component: LoginFormComponent},
     {path: '', redirectTo: 'login', pathMatch: 'full'}
 
@@ -17,7 +19,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [ RouterModule.forRoot(routes)],
-    providers: [],
+    providers: [RouterGaurdService, RegisterGaurdService],
     exports: [RouterModule]
 })
 

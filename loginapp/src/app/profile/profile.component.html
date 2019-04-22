@@ -1,6 +1,9 @@
 <div>
-  <h1>Hi </h1>
-  <h2>Your Role is : </h2>
-  <h3>Profile Page</h3>
+  <h1>Hi {{userInfo.name}}</h1>
+  <h2>Your Role is : {{userInfo.role}}</h2>
+  <h3>Permission:{{userInfo.role==="admin"?"You have access to add user":"You can only view profile"}}</h3>
+  <div *ngIf="userInfo.role==='admin'">
+    <button class="btn btn-success" [routerLink]="['/register']">Add User</button>
+  </div>
  
  </div>
