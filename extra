@@ -194,3 +194,11 @@ method:Post
 
 For all User: http://localhost:5000/api/auth/users
 method:GET
+
+
+npm run build
+nginx.conf
+
+docker build . -t marchang
+docker image ls 
+docker run -p 9000:4200 marchang
